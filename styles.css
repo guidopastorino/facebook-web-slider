@@ -1,0 +1,250 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #cecece;
+    font-family: sans-serif;
+}
+
+.container{
+    width: 100%;
+    max-width: 500px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px #22222267;
+}
+
+
+/* header */
+.container .container__sections{
+    display: grid;
+    padding: 5px;
+    gap: 5px;
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+    border-bottom: .5px solid #8080805b;
+}
+
+.container .container__sections button{
+    padding: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    background: #fff;
+    outline: none;
+    border: none;
+    font-size: 15px;
+    display: block;
+    position: relative;
+}
+
+button *{
+    pointer-events: none;
+}
+
+.container .container__sections button:not(.active):hover{
+    background: #cecece80;
+}
+
+.container .container__sections button:not(.active):active{
+    background: #22222231;
+}
+
+button.active{
+    font-weight: bold;
+    color: #0059ff;
+}
+
+button.active::after{
+    content: '';
+    width: 100%;
+    height: 2.5px;
+    border-radius: 50px;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    background: #0059ff;
+}
+
+
+
+/*  */
+.container__swiper{
+    width: 100%;
+    position: relative;
+    height: 230px;
+}
+
+.container__swiper > button{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #fff;
+    font-size: 30px;
+    color: #222;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    box-shadow: 1px 1px 5px #2222226e;
+    position: absolute;
+    top: 50%;
+    z-index: 20;
+    transform: translateY(-50%);
+}
+
+#btnLeft{
+    left: 10px;
+}
+
+#btnRight{
+    right: 10px;
+}
+
+.swiper{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+    overflow-x: scroll;
+    padding: 10px;
+    scroll-snap-type: x mandatory;
+    scroll-padding: 10px;
+    scroll-behavior: smooth;
+    position: relative;
+}
+
+.swiper::-webkit-scrollbar{
+    display: none;
+}
+
+/* content */
+.item{
+    height: 100%;
+    flex-shrink: 0;
+    border-radius: 5px;
+    scroll-snap-align: start;
+    position: relative;
+    box-shadow: 0 1px 2px #22222267;
+    background: #fff;
+    overflow: hidden;
+}
+
+.hvr:hover{
+    filter: brightness(.85);
+}
+
+/* storie item styles */
+.storie{
+    width: 110px;
+    cursor: pointer;
+}
+
+.storie__info{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 10px;
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.storie__info .storie__profile img{
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    outline: 3px solid #0059ff;
+    border-radius: 50%;
+}
+
+.storie__info .storie__name span{
+    font-size: 14px;
+    color: #fff;
+}
+
+.storie__img-bg{
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.storie__img-bg img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* reel item styles */
+.reel{
+    width: 110px;
+}
+
+.reel--info{
+    justify-content: end;
+}
+
+/* room item styles */
+.room{
+    cursor: pointer;
+    width: 210px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #22222231;
+}
+
+.room__profile{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.room__profile img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.room__profile span{
+    font-weight: 600;
+}
+
+.room__greet{
+    width: 100%;
+}
+
+.room__greet button{
+    cursor: pointer;
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    outline: none;
+    background: #fff;
+    border: 1px solid #22222231;
+    font-size: 15px;
+    color: #0059ff;
+    font-weight: bold;
+}
